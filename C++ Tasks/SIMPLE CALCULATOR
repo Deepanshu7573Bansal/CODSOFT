@@ -1,0 +1,44 @@
+#include<iostream>
+
+using namespace std;
+
+// main fuction
+int main(){
+    // variable declaration
+    int num1, num2, option;
+    
+    // Input of two numbers
+    cout<<"Enter num1: ";
+    cin>>num1;
+    cout<<"Enter num2: ";
+    cin>>num2;
+    
+    // Input of operation by given list 
+    cout<<"Choose operation to perform:\n";
+    cout<<"option1: +\n";
+    cout<<"option2: -\n";
+    cout<<"option3: *\n";
+    cout<<"option4: /\n";
+    
+    cout<<"Enter option number by above list: ";
+    cin>>option;
+    
+    // switch statement to perform operation on two numbers according to given input and operation
+    switch(option){
+        case 1:
+            cout<<"\nAddition of two numbers\n"<<num1<<'+'<<num2<<": "<<num1+num2;
+            break;
+        case 2:
+            cout<<"\nSubtraction of two numbers\n"<<num1<<'-'<<num2<<": "<<num1-num2;
+            break;
+        case 3:
+            cout<<"\nMultiply of two numbers\n"<<num1<<'*'<<num2<<": "<<num1*num2;
+            break;
+        case 4:
+            cout<<"\nDivision of two numbers\n"<<num1<<'/'<<num2<<": "<<num1/num2;
+            break;
+        default:
+            cout<<"\nError! choose correct operation";
+    }
+    return 0;
+}
