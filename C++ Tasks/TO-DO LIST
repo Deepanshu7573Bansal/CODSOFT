@@ -1,0 +1,54 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+// main fuction
+int main(){
+    //declare vector to store status and task
+    vector<string>status;
+    vector<string>task;
+    
+    // variable declaration
+    string tstr,str;
+    int index,count=1;
+    
+    // while loop to perform task(add, view, delete and statuschange)
+    while(true){
+        count=1;
+        cout<<"Enter task: ";
+        cin>>tstr;
+        if(tstr=="add"){  // add task perform
+            cout<<"Enter string: ";
+            cin>>str;
+            task.push_back(str);
+            status.push_back("pending");
+        }else if(tstr=="view"){  // view task perform
+            for(int i=0;i<task.size();i++){
+                if(task[i]!="delete"){
+                    cout<<"Task"<<count<<"\n";
+                    cout<<"Task: "<<task[i]<<"\n";
+                    cout<<"Status: "<<status[i]<<"\n";
+                    count++;
+                }
+            }
+        }else if(tstr=="delete"){  // delete task perform
+            cout<<"Enter task no.: ";
+            cin>>index;
+            status.erase(status.begin()+(index-1));
+            task.erase(task.begin()+(index-1));
+        }else if(tstr=="statuschange"){  // statuschange task perform
+            cout<<"Enter task no.: ";
+            cin>>index;
+            status[index-1]="complete";
+        }else{  // give right choose list
+            cout<<"Enter right task by given list:\n";
+            cout<<"1. add\n";
+            cout<<"2. view\n";
+            cout<<"3. delete\n";
+            cout<<"4. statuschange\n";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
