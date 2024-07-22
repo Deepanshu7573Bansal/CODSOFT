@@ -1,0 +1,41 @@
+#include<iostream>
+#include<cstdio>
+#include<time.h>
+
+using namespace std;
+
+// main fuction
+int main(){
+    // srand function to guess different number at particular time
+    srand(time(0));
+    
+    // variable declaration
+    int rnum, num1, count=1;
+    
+    // Generate random number by calling function
+    rnum=(rand() % (999-1+1))+1;
+    cout<<rnum;
+     
+    // first input to guess number
+    cout<<"Guees any number between 1 to 999 : ";
+    cin>>num1;
+    if(rnum==num1){
+        cout<<"\nYour guess the correct number\n";
+        cout<<"Total steps you take to guess correct number "<<count;
+    }
+    
+    // while loop to check guess number equal or not
+    while(rnum!=num1){
+        cout<<"Guees any number between 1 to 999 : ";
+        cin>>num1;
+        count++;
+        
+        // if statement to check guess number equal or not
+        if(rnum==num1){
+            cout<<"\nYour guess the correct number\n";
+            cout<<"Total steps you take to guess correct number "<<count;
+            break;
+        }
+    }
+    return 0;
+}
