@@ -1,1 +1,1 @@
-Credit Card Fraud Detection based on Logistic Regression.
+Credit Card Fraud Detection based on Random Forest Classifier.
